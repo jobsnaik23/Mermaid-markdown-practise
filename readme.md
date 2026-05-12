@@ -10,7 +10,7 @@ graph TD
     
     %% Phase 1: Agent 1
     subgraph P1 ["Phase 1: Agent 1 - Weekly or Monthly"]
-        A[www.nbb.be Bank List] --> B(Scrape Bank Names)
+        A[www.nbb.be] --> B(Scrape Bank Names)
         B --> C(Search & Map Bank Domains)
         C --> D[(bank_domain.csv)]
     end
