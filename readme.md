@@ -1,5 +1,6 @@
 ## mermaid practise file
 ```mermaid
+
 graph TD
     %% Styling
     classDef external fill:#f9f,stroke:#333,stroke-width:2px;
@@ -8,14 +9,14 @@ graph TD
     classDef decision fill:#ffb,stroke:#333,stroke-width:1px;
     
     %% Phase 1: Agent 1
-    subgraph Phase 1: Agent 1 (Weekly/Monthly)
+    subgraph P1 ["Phase 1: Agent 1 - Weekly or Monthly"]
         A[www.nbb.be Bank List] --> B(Scrape Bank Names)
         B --> C(Search & Map Bank Domains)
         C --> D[(bank_domain.csv)]
     end
 
     %% Phase 2: Agent 2
-    subgraph Phase 2: Agent 2 (Daily Execution)
+    subgraph P2 ["Phase 2: Agent 2 - Daily Execution"]
         D --> E(Extract Saving Product URLs)
         E --> F[(saving_account_only.csv)]
         F --> G(Scrape Core Metrics <br> Base, Bonus, Min/Max)
@@ -41,8 +42,7 @@ graph TD
     end
 
     class A external;
-    class B,C,E,G,I,M,n,P,Q process;
+    class B,C,E,G,I,M,N,P,Q process;
     class D,F,H,O,T storage;
     class J decision;
-
 ```
