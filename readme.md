@@ -33,7 +33,7 @@ graph TD
         N --> O[(Diff Report)]
         
         %% LLM & Outputs
-        O --> P(LLM Engine(Diff Report + Taxonomy))
+        O --> P(LLM Engine(Diff Report , Taxonomy))
         P --> Q(Generate Business Insights)
         
         Q --> R([1. Email Delivery])
