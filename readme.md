@@ -19,7 +19,7 @@ graph TD
     subgraph P2 ["Phase 2: Agent 2 - Daily Execution"]
         D --> E(Extract Saving Product URLs)
         E --> F[(saving_account_only.csv)]
-        F --> G(Scrape Core Metrics <br> Base, Bonus, Min/Max)
+        F --> G(Scrape Core Metrics <br> BaseRate, Bonus, Min/Max)
         G --> H[(data1.json)]
         H --> I(Generate Hash Key)
         I --> J{Hash == Previous Day Hash?}
@@ -28,12 +28,12 @@ graph TD
         J -- Yes --> K(Generate No-Change Report)
         K --> L([Email to User / STOP])
         
-        J -- No --> M(Run Deep JSON Diff)
+        J -- No --> M(Compare data1.json with data2.json)
         M --> N(Identify Name, Rate, & Product Changes)
         N --> O[(Diff Report)]
         
         %% LLM & Outputs
-        O --> P(LLM Engine + Taxonomy Input)
+        O --> P(LLM Engine(Diff Report + Taxonomy))
         P --> Q(Generate Business Insights)
         
         Q --> R([1. Email Delivery])
