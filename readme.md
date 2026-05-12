@@ -22,7 +22,7 @@ graph TD
         F --> G(Scrape Core Metrics <br> Base, Bonus, Min/Max)
         G --> H[(data1.json)]
         H --> I(Generate Hash Key)
-        I --> J{Hash == Previous Day?}
+        I --> J{Hash == Previous Day Hash?}
         
         %% Decision Paths
         J -- Yes --> K(Generate No-Change Report)
